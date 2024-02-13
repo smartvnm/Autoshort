@@ -11,7 +11,7 @@ from termcolor import colored
 from dotenv import load_dotenv
 from youtube import upload_video
 from apiclient.errors import HttpError
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify,send_from_directory
 from moviepy.config import change_settings
 
 
@@ -24,7 +24,7 @@ openai_api_key = os.getenv('OPENAI_API_KEY')
 change_settings({"IMAGEMAGICK_BINARY": os.getenv("IMAGEMAGICK_BINARY")})
 
 # Initialize Flask
-app = Flask(__name__)
+app = Flask(__name__, static_folder='../Frontend')
 CORS(app)
 
 # Constants
@@ -32,6 +32,15 @@ HOST = "0.0.0.0"
 PORT = 8080
 AMOUNT_OF_STOCK_VIDEOS = 5
 GENERATING = False
+
+#Home endpoint
+@app.route('/<path:path>')
+def serve_page(path):
+    return send_from_directory(app.static_folder, path)
+
+@app.route('/')
+def home():
+    return send_from_directory(app.static_folder, 'index.html')
 
 
 # Generation Endpoint
