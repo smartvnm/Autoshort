@@ -29,7 +29,7 @@ CORS(app)
 
 # Constants
 HOST = "0.0.0.0"
-PORT = 8080
+PORT = 8003
 AMOUNT_OF_STOCK_VIDEOS = 5
 GENERATING = False
 
