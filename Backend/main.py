@@ -13,7 +13,7 @@ from youtube import upload_video
 from apiclient.errors import HttpError
 from flask import Flask, request, jsonify,send_from_directory
 from moviepy.config import change_settings
-
+from flask_ngrok import run_with_ngrok
 
 # Load environment variables
 load_dotenv("../.env")
@@ -25,8 +25,9 @@ change_settings({"IMAGEMAGICK_BINARY": os.getenv("IMAGEMAGICK_BINARY")})
 
 # Initialize Flask
 app = Flask(__name__, static_folder='../Frontend')
-#CORS(app)
+CORS(app)
 app.debug = True
+run_with_ngrok(app)
 # Constants
 HOST = "localhost"
 PORT = 8003
@@ -46,7 +47,7 @@ def home():
 # Generation Endpoint
 @app.route("/api/generate", methods=["POST"])
 def generate():
-    try:
+1    try:
         # Set global variable
         global GENERATING
         GENERATING = True
