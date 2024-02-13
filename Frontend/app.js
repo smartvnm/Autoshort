@@ -25,7 +25,7 @@ advancedOptionsToggle.addEventListener("click", () => {
 const cancelGeneration = () => {
   console.log("Canceling generation...");
   // Send request to /cancel
-  fetch("/api/cancel", {
+  fetch("api/cancel", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -71,7 +71,7 @@ const generateVideo = () => {
   const customPromptValue = customPrompt.value;
   const subtitlesPosition = document.querySelector("#subtitlesPosition").value;
 
-  const url = "/api/generate";
+  const url = "api/generate";
 
   // Construct data to be sent to the server
   const data = {
