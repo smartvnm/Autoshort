@@ -354,4 +354,4 @@ def cancel():
 if __name__ == "__main__":
 
     # Run Flask App
-    app.run(debug=True, host=HOST, port=PORT)
+    app.run()
