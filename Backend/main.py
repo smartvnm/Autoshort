@@ -26,10 +26,10 @@ change_settings({"IMAGEMAGICK_BINARY": os.getenv("IMAGEMAGICK_BINARY")})
 # Initialize Flask
 app = Flask(__name__, static_folder='../Frontend')
 CORS(app)
-app.debug = True
+
 run_with_ngrok(app)
 # Constants
-HOST = "localhost"
+HOST = "0.0.0.0"
 PORT = 8003
 AMOUNT_OF_STOCK_VIDEOS = 5
 GENERATING = False
