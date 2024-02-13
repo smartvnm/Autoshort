@@ -47,7 +47,7 @@ def home():
 # Generation Endpoint
 @app.route("/api/generate", methods=["POST"])
 def generate():
-1    try:
+    try:
         # Set global variable
         global GENERATING
         GENERATING = True
