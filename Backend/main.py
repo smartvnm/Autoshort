@@ -28,7 +28,7 @@ app = Flask(__name__, static_folder='../Frontend')
 #CORS(app)
 app.debug = True
 # Constants
-HOST = "0.0.0.0"
+HOST = "localhost"
 PORT = 8003
 AMOUNT_OF_STOCK_VIDEOS = 5
 GENERATING = False
