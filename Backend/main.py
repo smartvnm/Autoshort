@@ -25,7 +25,7 @@ change_settings({"IMAGEMAGICK_BINARY": os.getenv("IMAGEMAGICK_BINARY")})
 
 # Initialize Flask
 app = Flask(__name__, static_folder='../Frontend')
-CORS(app)
+#CORS(app)
 app.debug = True
 # Constants
 HOST = "0.0.0.0"
