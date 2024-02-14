@@ -13,7 +13,6 @@ from youtube import upload_video
 from apiclient.errors import HttpError
 from flask import Flask, request, jsonify,send_from_directory
 from moviepy.config import change_settings
-from flask_ngrok import run_with_ngrok
 
 # Load environment variables
 load_dotenv("../.env")
@@ -354,4 +353,4 @@ def cancel():
 if __name__ == "__main__":
 
     # Run Flask App
-    app.run()
+    app.run(debug=True, host=HOST, port=PORT)
