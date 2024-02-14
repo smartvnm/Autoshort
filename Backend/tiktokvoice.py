@@ -15,6 +15,12 @@ from termcolor import colored
 from playsound import playsound
 
 
+import asyncio
+import edge_tts
+
+
+
+
 VOICES = [
     # DISNEY VOICES
     "en_us_ghostface",  # Ghost Face
